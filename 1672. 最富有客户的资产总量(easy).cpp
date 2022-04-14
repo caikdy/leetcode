@@ -9,7 +9,13 @@ public:
         int max_assets = 0;
         for (auto accout : accounts)
         {
-            int  
+            int assets = 0;
+            for (auto asset : accout)
+            {
+                assets += asset;
+            }
+            max_assets = max(max_assets, assets);
         }
+        return max_assets;
     }
 };
