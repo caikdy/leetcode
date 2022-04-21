@@ -12,7 +12,7 @@ public:
         int len = sentence.length();
         for (int i = 0, j = 0; j < len; j++)
         {
-            while (len != sentence[j] != ' ')
+            while (j != len && sentence[j] != ' ')
             {
                 j++;
             }
@@ -27,8 +27,10 @@ public:
             }
             else
             {
-                res+=sentence.substr(i+1,j-i-1)+sentence[i]+'m'+ string(count, 'a');
+                res += sentence.substr(i + 1, j - i - 1) + sentence[i] + 'm' + string(count, 'a');
             }
+            i = j + 1;
         }
+        return res;
     }
 };
